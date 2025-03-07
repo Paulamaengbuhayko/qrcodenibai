@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="qr.css">
-    <title>QR Code Website</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="admin.js" defer></script> <!-- Linking to the external JS file -->
+    <title>QR Code Feedback</title>
 </head>
 <body>
-    <h1>Welcome to My QR Code Website</h1>
-    <img src="frame1.png" alt="Frame Image" width="200">
+    <div class="container">
+        <img src="logo.png" alt="Business Logo" class="logo">
+        <h1>Business Anonymous Report System</h1>
+        
+        <form action="connect.php" method="post" id="feedbackForm">
+            <label id="feedbackLabel" for="feedback">What can we do for you?</label>   
+            <select id="feedback" name="feedback" onchange="handleSelection()">
+                <option value="" disabled selected hidden>Choose an option</option>
+                <option value="feedback">Feedback</option name="Feedback" >
+                <option value="admin">Admin Login</option>
+            </select>
+
+            <textarea id="feedbackInput" name="feedbackInput" placeholder="Type your feedback here..." style="display: none;"></textarea>
+            <button type="submit" id="submitButton" style="display: none;">Submit</button>
+
+            <!-- Thank you label now appears only after feedback is submitted -->
+            <label id="thankYouMessage" style="display: none;">🌟 Thank you for your feedback!</label>
+        </form>
+    </div>
 </body>
 </html>
