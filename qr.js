@@ -1,4 +1,3 @@
-// Import Firebase SDK modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
 
@@ -18,8 +17,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-// Handle form submission and save to Firebase
-document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+// DOM references
+const form = document.getElementById("feedbackForm");
+const thankYouMessage = document.getElementById("thankYouMessage");
+const newFeedbackButton = document.getElementById("newFeedbackButton");
+const welcomeMessage = document.querySelector(".welcome-message");
+const websiteTitle = document.querySelector("h1");
+
+// Handle form submission
+form.addEventListener("submit", function (e) {
   e.preventDefault();
 
   const message = document.getElementById("feedbackInput").value;
@@ -42,15 +48,33 @@ document.getElementById("feedbackForm").addEventListener("submit", function (e) 
     foodRating: foodRating,
     timestamp: new Date().toISOString()
   }).then(() => {
-    document.getElementById("feedbackForm").reset();
-    document.getElementById("thankYouMessage").style.display = "block";
-    setTimeout(() => {
-      document.getElementById("thankYouMessage").style.display = "none";
-    }, 3000);
+    // Hide form and welcome message
+    form.querySelectorAll("fieldset, textarea, button, select, label").forEach(el => {
+      el.style.display = "none";
+    });
+
+    welcomeMessage.style.display = "none";
+    thankYouMessage.style.display = "block";
+    thankYouMessage.style.fontSize = "2em";
+    thankYouMessage.style.textAlign = "center";
+
+    newFeedbackButton.style.display = "inline-block";
   }).catch((error) => {
     console.error("Error saving feedback:", error);
     alert("There was an error submitting your feedback.");
   });
 });
 
+// Handle "Submit Another Feedback" button
+newFeedbackButton.addEventListener("click", () => {
+  form.reset();
 
+  // Show form inputs again
+  form.querySelectorAll("fieldset, textarea, button, select, label").forEach(el => {
+    el.style.display = "";
+  });
+
+  welcomeMessage.style.display = "block";
+  thankYouMessage.style.display = "none";
+  newFeedbackButton.style.display = "none";
+});
