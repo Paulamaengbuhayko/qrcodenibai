@@ -1,4 +1,3 @@
-/* General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +5,8 @@
     font-family: Arial, sans-serif;
 }
 
-/* Body Styling */
 body {
-    background-color: #f4f1e9; /* Light beige/white tone */
+    background-color: #f4f1e9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,9 +14,8 @@ body {
     padding: 20px;
 }
 
-/* Dashboard Container */
 .dashboard-container {
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -28,14 +25,12 @@ body {
     overflow-x: auto;
 }
 
-/* Heading */
 h1 {
     font-size: 24px;
-    color: #2d572c; /* Dark Green */
+    color: #2d572c;
     margin-bottom: 15px;
 }
 
-/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -46,9 +41,8 @@ table {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Table Headers */
 thead {
-    background-color: #2d572c; /* Green */
+    background-color: #2d572c;
     color: white;
 }
 
@@ -58,17 +52,14 @@ th, td {
     text-align: left;
 }
 
-/* Alternating Row Colors */
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Hover Effect */
 tbody tr:hover {
     background-color: #e6e6e6;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     table {
         font-size: 14px;
@@ -78,3 +69,4 @@ tbody tr:hover {
         padding: 10px;
     }
 }
+
