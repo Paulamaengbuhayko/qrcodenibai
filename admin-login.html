@@ -20,12 +20,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("loginForm").addEventListener("submit", function (event) {
-                event.preventDefault(); // Prevent page refresh
+                event.preventDefault();
                 
                 const email = document.getElementById("email").value.trim();
                 const password = document.getElementById("password").value.trim();
 
-                // ✅ Updated email and password
                 if (email === "123" && password === "123456") {
                     alert("Login Successful!");
                     window.location.href = "admin-dashboard.html"; 
