@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="qr.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="qr.css" />
     <script type="module" src="qr.js"></script>
     <title>QR Code Feedback</title>
 </head>
 <body>
-    <div class="top-right">
-        <a href="admin-login.html" class="admin-login">Admin Login</a>
-    </div>
-
     <div class="container">
-        <img src="logo.png" alt="Business Logo" class="logo">
+        <a href="admin-login.html">
+            <img src="logo.png" class="logo" alt="Logo" />
+        </a>
+
         <h1>Business Anonymous Report System</h1>
 
         <div class="welcome-message">
@@ -22,12 +21,12 @@
             <p>Whether it's about our <strong>service</strong>, <strong>staff</strong>, or <strong>food</strong>, we’re all ears. Your feedback helps us grow and take better care of our awesome customers — like you!</p>
             <p>No names, no tracking. Just your honest thoughts. 💌</p>
             <p>We’re listening. We’re learning. Thanks for helping us do better. 💚</p>
-        </div>  
-        
+        </div>
+
         <form id="feedbackForm">
             <fieldset class="rating-section">
                 <legend>Rate Us</legend>
-            
+
                 <!-- Service -->
                 <label for="serviceRating">How's our service?</label>
                 <select id="serviceRating" name="serviceRating" required>
@@ -38,7 +37,7 @@
                     <option value="4">4 - Very Good</option>
                     <option value="5">5 - Excellent</option>
                 </select>
-            
+
                 <!-- Staff -->
                 <label for="staffRating">How about our staff?</label>
                 <select id="staffRating" name="staffRating" required>
@@ -49,7 +48,7 @@
                     <option value="4">4 - Very warm and helpful</option>
                     <option value="5">5 - Absolutely amazing service!</option>
                 </select>
-            
+
                 <!-- Food -->
                 <label for="foodRating">What about our food?</label>
                 <select id="foodRating" name="foodRating" required>
@@ -61,14 +60,18 @@
                     <option value="5">5 - Mouthwatering and perfect!</option>
                 </select>
             </fieldset>
-        
+
             <label for="feedbackInput">Details</label>
-            <textarea id="feedbackInput" name="feedbackInput" placeholder="Type your feedback here..." required></textarea>
-        
+            <textarea
+                id="feedbackInput"
+                name="feedbackInput"
+                placeholder="Type your feedback here..."
+                required
+            ></textarea>
+
             <button type="submit" id="submitButton">Submit</button>
             <label id="thankYouMessage" style="display: none;">🌟 Thank you for your feedback!</label>
         </form>
-        
     </div>
 </body>
 </html>
