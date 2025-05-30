@@ -4,28 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="qr.css">
-    <script src="admin.js" defer></script> <!-- Linking to the external JS file -->
+    <script type="module" src="qr.js"></script>
     <title>QR Code Feedback</title>
 </head>
 <body>
+    <div class="top-right">
+        <a href="admin-login.html" class="admin-login">Admin Login</a>
+    </div>
+
     <div class="container">
         <img src="logo.png" alt="Business Logo" class="logo">
         <h1>Business Anonymous Report System</h1>
+
+        <div class="welcome-message">
+            <h2>Hey there! 😊</h2>
+            <p>Thanks for stopping by — it means a lot! You've just entered a safe, anonymous space where you can share your thoughts freely.</p>
+            <p>Whether it's about our <strong>service</strong>, <strong>staff</strong>, or <strong>food</strong>, we’re all ears. Your feedback helps us grow and take better care of our awesome customers — like you!</p>
+            <p>No names, no tracking. Just your honest thoughts. 💌</p>
+            <p>We’re listening. We’re learning. Thanks for helping us do better. 💚</p>
+        </div>  
         
-        <form action="connect.php" method="post" id="feedbackForm">
-            <label id="feedbackLabel" for="feedback">What can we do for you?</label>   
-            <select id="feedback" name="feedback" onchange="handleSelection()">
-                <option value="" disabled selected hidden>Choose an option</option>
-                <option value="feedback">Feedback</option name="Feedback" >
-                <option value="admin">Admin Login</option>
-            </select>
-
-            <textarea id="feedbackInput" name="feedbackInput" placeholder="Type your feedback here..." style="display: none;"></textarea>
-            <button type="submit" id="submitButton" style="display: none;">Submit</button>
-
-            <!-- Thank you label now appears only after feedback is submitted -->
+        <form id="feedbackForm">
+            <fieldset class="rating-section">
+                <legend>Rate Us</legend>
+            
+                <!-- Service -->
+                <label for="serviceRating">How's our service?</label>
+                <select id="serviceRating" name="serviceRating" required>
+                    <option value="" disabled selected hidden>Select rating</option>
+                    <option value="1">1 - Poor</option>
+                    <option value="2">2 - Fair</option>
+                    <option value="3">3 - Good</option>
+                    <option value="4">4 - Very Good</option>
+                    <option value="5">5 - Excellent</option>
+                </select>
+            
+                <!-- Staff -->
+                <label for="staffRating">How about our staff?</label>
+                <select id="staffRating" name="staffRating" required>
+                    <option value="" disabled selected hidden>Select response</option>
+                    <option value="1">1 - Unfriendly / Unhelpful</option>
+                    <option value="2">2 - Okay, could be more attentive</option>
+                    <option value="3">3 - Friendly and decent service</option>
+                    <option value="4">4 - Very warm and helpful</option>
+                    <option value="5">5 - Absolutely amazing service!</option>
+                </select>
+            
+                <!-- Food -->
+                <label for="foodRating">What about our food?</label>
+                <select id="foodRating" name="foodRating" required>
+                    <option value="" disabled selected hidden>Select response</option>
+                    <option value="1">1 - Not tasty or fresh</option>
+                    <option value="2">2 - Needs improvement</option>
+                    <option value="3">3 - Good, met expectations</option>
+                    <option value="4">4 - Very delicious</option>
+                    <option value="5">5 - Mouthwatering and perfect!</option>
+                </select>
+            </fieldset>
+        
+            <label for="feedbackInput">Details</label>
+            <textarea id="feedbackInput" name="feedbackInput" placeholder="Type your feedback here..." required></textarea>
+        
+            <button type="submit" id="submitButton">Submit</button>
             <label id="thankYouMessage" style="display: none;">🌟 Thank you for your feedback!</label>
         </form>
+        
     </div>
 </body>
 </html>
