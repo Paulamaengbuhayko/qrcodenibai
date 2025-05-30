@@ -1,4 +1,3 @@
-/* 🔹 General Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,18 +5,16 @@
     font-family: Arial, sans-serif;
 }
 
-/* 🔹 Body Styling */
 body {
-    background-color: #f4f1e9; /* Light beige */
+    background-color: #f4f1e9;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-/* 🔹 Main Container */
 .container {
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -26,72 +23,65 @@ body {
     width: 90%;
 }
 
-/* 🔹 Logo Styling */
 .logo {
     width: 80px;
     height: auto;
     margin-bottom: 10px;
 }
 
-/* 🔹 Heading */
 h1 {
     font-size: 20px;
-    color: #2d572c; /* Dark Green */
+    color: #2d572c;
     margin-bottom: 15px;
 }
 
-/* 🔹 Label Styling */
 label {
     display: block;
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 2px solid #2d572c; /* Green border */
+    border: 2px solid #2d572c;
     border-radius: 8px;
-    background-color: #2d572c; /* Green background */
-    color: #ffffff; /* White text */
+    background-color: #2d572c;
+    color: #ffffff;
     font-size: 14px;
     font-weight: bold;
     text-align: center;
 }
 
-/* 🔹 Select Dropdown */
 select {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    border: 2px solid #2d572c; /* Green Border */
+    border: 2px solid #2d572c;
     border-radius: 8px;
     background-color: #ffffff;
     color: #333;
     font-size: 14px;
     outline: none;
-    text-align-last: center; /* Centers selected text */
+    text-align-last: center;
 }
 
-/* Ensure "Choose an option" text is white */
 select option[value=""] {
     color: white;
 }
 
-/* 🔹 Textarea for Feedback */
 #feedbackInput {
     width: 100%;
     padding: 10px;
-    border: 2px solid #4a3f35; /* Brown */
+    border: 2px solid #4a3f35;
     border-radius: 8px;
     font-size: 14px;
     outline: none;
-    display: none; /* Initially hidden */
+    display: none;
 }
 
-/* 🔹 Button Styling */
 button {
     width: 100%;
     padding: 12px;
     border: none;
     border-radius: 8px;
-    background-color: #2d572c; /* Green */
+    background-color: #2d572c;
     color: #ffffff;
     font-size: 16px;
     font-weight: bold;
@@ -100,19 +90,98 @@ button {
 }
 
 button:hover {
-    background-color: #1e3d1e; /* Darker Green */
+    background-color: #1e3d1e;
 }
 
-/* 🔹 Feedback Message */
 #thankYouMessage {
-    display: none; /* Initially hidden */
+    display: none;
     margin-top: 15px;
     font-size: 16px;
     font-weight: bold;
-    color: #2d572c; /* Green text */
+    color: #2d572c;
     text-align: center;
     padding: 10px;
-    border: 2px solid #2d572c; /* Green border */
+    border: 2px solid #2d572c;
     border-radius: 8px;
-    background-color: #e5f6e5; /* Light green background */
+    background-color: #e5f6e5;
 }
+
+.top-right {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.admin-login {
+    text-decoration: none;
+    background-color: #2d572c;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.admin-login:hover {
+    background-color: #1e3d1e;
+}
+
+select + label {
+    margin-top: 10px;
+}
+
+.welcome-message {
+    background-color: #fff9f0;
+    border: 2px solid #f4d19b;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    color: #5a4a3f;
+    text-align: justify;
+    font-size: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 1s ease-in;
+}
+
+.welcome-message h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #d18522;
+    margin-bottom: 12px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rating-section {
+    border: 2px solid #2d572c;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f0f9f0;
+}
+
+.rating-section legend {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2d572c;
+    margin-bottom: 10px;
+}
+
+textarea#feedbackInput {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #4a3f35;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
